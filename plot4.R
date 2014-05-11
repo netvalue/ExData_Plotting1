@@ -7,7 +7,7 @@ plot4 = function() {
   data=subset(data, (data$Date>=strptime("2007-02-01","%Y-%m-%d")&(data$Date<strptime("2007-02-03","%Y-%m-%d"))))
   
   par(mfrow = c(2, 2))  ## Four graphs
-  par(mar=c(2,2,2,2))
+  par(mar=c(5,5,2,2))
   
   with(data,{
     
@@ -21,7 +21,7 @@ plot4 = function() {
     lines(data$Date,data$Sub_metering_1,type="l") ## line plot
     lines(data$Date,data$Sub_metering_2,type="l",col="red") ## line plot
     lines(data$Date,data$Sub_metering_3,type="l",col="blue") ## line plot
-    legend("topright", lty=1, text.font=.5,col=c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+    legend("topright", lty=1, text.font=.1,col=c("black","red","blue"), legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
     
     plot(data$Date,data$Global_reactive_power,type="l", xlab="datetime",ylab="Global_reactive_power") ## Graph 4
   }
